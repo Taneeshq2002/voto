@@ -1,0 +1,196 @@
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo {
+  width: 5.2rem;
+}
+.logo-name {
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: #5353c6;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
+}
+
+.main-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 7.4rem;
+  list-style: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  font-size: 1.8rem;
+  color: #151531;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.1s;
+}
+
+.main-nav-link.footer-link:hover,
+.main-nav-link.footer-link:active {
+  color: #44445a;
+}
+
+.main-nav-link.nav:hover,
+.main-nav-link.nav:active {
+  color: #6868f7;
+}
+.cta-box {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+/* Hero section */
+.section-hero {
+  padding: 8rem 50rem;
+  text-align: center;
+}
+
+.hero-text {
+  font-size: 2rem;
+  color: #2a2a63;
+  line-height: 1.8;
+  padding: 0 15rem;
+  margin-bottom: 5.2rem;
+}
+
+.get-started-btn {
+  color: #fff;
+  font-size: 1.8;
+  font-weight: 600 !important;
+
+  padding: 1.6rem 7.6rem !important;
+  background-image: linear-gradient(to bottom, #6868f7, #4c40d9);
+  transition: all 0.2s;
+}
+
+.get-started-btn:hover {
+  background-image: linear-gradient(to bottom, #7777f8, #5e53dd);
+}
+
+/* Image */
+.event-preview {
+  padding: 8rem 0;
+  text-align: center;
+}
+.event_preview_img {
+  width: 70%;
+  box-shadow: 0 4rem 8rem rgba(95, 83, 221, 0.3);
+  border-radius: 9px;
+}
+
+/* Section About Voto */
+.section-about {
+  padding: 8rem 0;
+}
+
+.about--text-box {
+  padding: 2rem;
+}
+.about--text {
+  font-size: 2rem;
+  color: #151531;
+  line-height: 1.8;
+  padding-right: 8rem;
+  margin-bottom: 5rem;
+}
+
+.about--img {
+  width: 100%;
+  box-shadow: 0 2rem 4rem rgba(95, 83, 221, 0.1);
+}
+
+/* Footer */
+.footer {
+  color: #fff !important;
+  padding: 4rem;
+  background-image: linear-gradient(to top right, #c8c8ff, #e5e5ff);
+}
+
+/* Voter or Candidate Page */
+.section-voter_or_candidate-box {
+  width: 100vw;
+  height: 100vh;
+  padding: 11rem 0;
+}
+
+.section-voter_or_candidate {
+  display: flex;
+  gap: 12rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.iam_choose:link,
+.iam_choose:visited {
+  height: 50rem;
+  width: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.2s;
+  box-shadow: inset 0 0 0 5px #6868f7;
+  /* color: #1f1f4a; */
+  color: #34347c;
+  background-color: #dee0ff;
+}
+
+.iam-candidate:hover,
+.iam-candidate:active,
+.iam-voter:hover,
+.iam-voter:active {
+  color: #dee0ff;
+  background-color: #6868f7;
+}
+
+/* Events Page */
+.section-events--table {
+  padding: rem 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.event-table {
+  font-size: 2.2rem;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 6.8rem;
+  /* padding: 2rem; */
+}
+
+.event-table td,
+.event-table th {
+  border: 1px solid #b9b9ff;
+  padding: 2.4rem !important;
+}
+
+.event-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.event-table tr:hover {
+  background-color: #ddd;
+}
+
+.event-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2a2a63;
+  color: white;
+}

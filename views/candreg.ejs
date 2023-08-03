@@ -1,0 +1,103 @@
+<%- include("partials/header"); -%>
+<section class="login">
+  <div class="container grid grid--2-col">
+    <!-- Login Heading (text box) -->
+    <div class="login-gradent-box">
+      <div class="login-gradent--heading-box">
+        <h1 class="login-gradent--heading">
+          <!-- Online voting system for <span>Events.</span> -->
+          &gt; Digital platform for college event <span> Voting.</span>
+        </h1>
+        <p class="login-gradent--text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis.
+        </p>
+      </div>
+    </div>
+
+    <div class="login-form-box">
+      <!-- here we add Logo -->
+      <img class="logo" src="css/logo.png" alt="logo" />
+      <p class="login-form--main-text">Hey, hello 👋</p>
+      <p class="login-form-text">Please Enter Valid Information to Sign Up</p>
+      <form action="/candreg" method="post">
+        <div class="form-flex-items">
+          <label class="lable" for="Email">Name</label>
+          <input
+            class="input"
+            type="text"
+            name="candregname"
+            id=""
+            placeholder="Name"
+            required
+          />
+        </div>
+
+        <!-- <div class="form-flex-items">
+          <label class="lable" for="Email">Event code</label>
+          <input
+            class="input"
+            type="text"
+            name="candevent"
+            id=""
+            placeholder="event code"
+            required
+          />
+        </div> -->
+
+        <div class="form-flex-items">
+          <label class="lable" for="text">Voter id</label>
+          <input
+            class="input"
+            type="text"
+            name="candregid"
+            id=""
+            placeholder="Voter id"
+            required
+          />
+        </div>
+
+        <div class="form-flex-items">
+          <label class="lable" for="password">Password</label>
+          <input
+            class="input"
+            type="password"
+            name="candregpass"
+            id=""
+            placeholder="********"
+            required
+          />
+        </div>
+
+        <div class="form-flex-items">
+          <label class="lable" for="password">Confirm Password</label>
+          <input
+            class="input"
+            type="password"
+            name="candregcon"
+            id=""
+            placeholder="********"
+            required
+          />
+        </div>
+        <button class="btn btn--form">Register</button>
+        <div class="forgot-password-box">
+          <a class="link create-acc" href="/candlogin">Already registered?</a>
+        </div>
+      </form>
+      <p
+        style="
+          font-weight: bolder;
+          color: #151531;
+          font-size: 2rem;
+          line-height: 1.6;
+          margin-left: 6rem;
+          margin-top: 3rem;
+        "
+      >
+        <%=alert%>
+      </p>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer"); -%>

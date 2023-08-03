@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+                         initial-scale=1.0">
+    <title>Voting Web Application</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="heading">Student Voting Form</h1>
+        <h3 class="title">Student Login & Registration Form</h3>
+    </header>
+
+    <!-- container div -->
+    <div class="container">
+
+        <!-- upper button section to select
+             the login or signup form -->
+        <div class="slider"></div>
+        <div class="btn">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div>
+
+        <!-- Form section that contains the
+             login and the signup form -->
+        
+            <div class="form-section">
+               
+       
+        
+            <!-- signup form -->
+            <div class="signup-box">
+                <form action="/" method="post">
+                <input type="text" class="ID ele" maxlength="10" placeholder="Enter your ID/USN" name="signupusn">
+                <input type="email" class="email ele" placeholder="youremail@email.com" name="signupmail">
+                <input type="password" class="password ele" maxlength="20" placeholder="password" name="signuppass">
+                <input type="password" class="password ele" placeholder="Confirm password" name="signupconfirm">
+                <button type="submit" class="clkbtn">Signup</button>
+                </form>
+            </div>
+       
+    </div>
+
+    </div>
+    <script src="css/index.js"></script>
+</body>
+
+</html>

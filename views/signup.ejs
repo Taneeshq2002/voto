@@ -1,0 +1,90 @@
+<%- include("partials/header"); -%>
+<section class="login">
+  <div class="container grid grid--2-col">
+    <!-- Login Heading (text box) -->
+    <div class="login-gradent-box">
+      <div class="login-gradent--heading-box">
+        <h1 class="login-gradent--heading">
+          <!-- Online voting system for <span>Events.</span> -->
+          &gt; Digital platform for college event <span> Voting.</span>
+        </h1>
+        <p class="login-gradent--text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis.
+        </p>
+      </div>
+    </div>
+
+    <div class="login-form-box">
+      <!-- here we add Logo -->
+      <img class="logo" src="css/logo.png" alt="logo" />
+      <p class="login-form--main-text">Hey, hello 👋</p>
+      <p class="login-form-text">Please Enter Valid Information to Sign Up</p>
+      <form action="/signup" method="post">
+        <div class="form-flex-items">
+          <label class="lable" for="">Name</label>
+          <input
+            class="input"
+            type="text"
+            name="signupname"
+            id=""
+            placeholder="Name"
+            required
+          />
+        </div>
+
+        <div class="form-flex-items">
+          <label class="lable" for="text">Voter ID</label>
+          <input
+            class="input"
+            type="text"
+            name="signupid"
+            id=""
+            placeholder="AYS...."
+            required
+          />
+        </div>
+
+        <div class="form-flex-items">
+          <label class="lable" for="password">Password</label>
+          <input
+            class="input"
+            type="password"
+            name="signuppass"
+            id=""
+            placeholder="********"
+            required
+          />
+        </div>
+
+        <div class="form-flex-items">
+          <label class="lable" for="password">Confirm Password</label>
+          <input
+            class="input"
+            type="password"
+            name="signupcon"
+            id=""
+            placeholder="********"
+            required
+          />
+        </div>
+        <button class="btn btn--form">Sign Up</button>
+        <div class="forgot-password-box">
+          <a class="link create-acc" href="/login">Already have an account?</a>
+        </div>
+      </form>
+      <p
+        style="
+          font-weight: bolder;
+          color: black;
+          font-size: 2.5rem;
+          margin-left: 6rem;
+          margin-top: 3rem;
+        "
+      >
+        <%=alert%>
+      </p>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer"); -%>

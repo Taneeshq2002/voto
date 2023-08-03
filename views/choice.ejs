@@ -1,0 +1,38 @@
+<%- include("partials/header"); -%>
+<header class="container header">
+  <div class="logo-box">
+    <a href="index.html"
+      ><img class="logo" src="css/logo-removebg-preview.png" alt="logo"
+    /></a>
+    <a href="index.html" class="logo-name"><p>Voto</p></a>
+  </div>
+  <nav class="main-nav">
+    <ul class="main-nav-list">
+      <li><a class="main-nav-link nav" href="index.html">Home</a></li>
+      <li><a class="main-nav-link nav" href="#">About</a></li>
+      <li>
+        <a class="main-nav-link nav" href="/choice">Choose</a>
+      </li>
+      <li>
+        <a class="main-nav-link nav" href="event_page.html">Events</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="cta-box">
+    <a href="/login" class="btn login-btn">
+      <button class="btn-none" type="submit">Login</button></a
+    >
+
+    <a href="/signup" class="btn sign-up-btn"
+      ><button class="btn-none" type="submit">Sign up</button></a
+    >
+  </div>
+</header>
+<main class="section-voter_or_candidate-box">
+  <div class="container section-voter_or_candidate">
+    <a class="iam_choose iam-voter" href="/events">Voter</a>
+    <a class="iam_choose iam-candidate" href="/candreg">Candidate</a>
+  </div>
+</main>
+
+<%- include("partials/footer"); -%>

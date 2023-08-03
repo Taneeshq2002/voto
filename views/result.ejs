@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <title>Voto</title>
+  </head>
+  <body>
+    <header class="container header">
+      <div class="logo-box">
+        <a href="index.html"
+          ><img class="logo" src="css/logo-removebg-preview.png" alt="logo"
+        /></a>
+        <a href="index.html" class="logo-name"><p>Voto</p></a>
+      </div>
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link nav" href="/">Home</a></li>
+          <li><a class="main-nav-link nav" href="/">About</a></li>
+          
+        </ul>
+      </nav>
+      <div class="cta-box">
+        <a class="btn login-btn" href="/login">Login</a>
+        <a class="btn sign-up-btn" href="/signup">Sign up</a>
+      </div>
+    </header>
+    <main class="section-candidate-list">
+      <div class="container  winner">
+        <h2>The Winner is</h2>
+        <h1 class="heading-primary"><span><%=listItems[0].name%></span></h1>
+      </div>
+      <section class="candidate-list-box container">
+        <h1 class="heading-primary heading-result">Results of <span><%= event %></span></h1>
+        <!-- <ul class="candidate-list"> -->
+           
+          <table class="event-table">
+            <tr>
+              <th>S No</th>
+              <th>Name of candidate</th>
+              <th>Number of Votes</th>
+            </tr>
+          
+          <% for(var i=0;i<listItems.length;i++){ %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%=listItems[i].name%></td>
+              <td><%=listItems[i].votes%></td>
+            </tr>
+           <%}%>
+          </table>
+      </section>
+    </main>
+  </body>
+</html>

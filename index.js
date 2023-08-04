@@ -13,23 +13,21 @@ app.set("view engine", "ejs");
 
 //var listItems=["one","two","three"];
 var listitems = [];
-var events = ["Freshers", "President selections"];
-var eventcodes = ["fre001", "pre002"];
 var selected = ""; //to store usn of candidate whose checkbox is ticked
 var count = 0; //to keep count fo votes of each candidate separately
 
-// mongoose.connect("mongodb://127.0.0.1:27017/usersDB", {
-//   useNewUrlParser: true,
-// });
-mongoose.set("strictQuery", false);
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URL);
-  } catch (err) {
-    console.log(error);
-    process.exit(1);
-  }
-};
+mongoose.connect("mongodb://127.0.0.1:27017/electionDB", {
+  useNewUrlParser: true,
+});
+// mongoose.set("strictQuery", false);
+// const connectDB = async () => {
+//   try {
+//     const conn = await mongoose.connect(process.env.MONGO_URL);
+//   } catch (err) {
+//     console.log(error);
+//     process.exit(1);
+//   }
+// };
 
 //for all users
 userSchema = new mongoose.Schema({
@@ -43,16 +41,6 @@ candidateSchema = new mongoose.Schema({
   name: String,
   voterid: String,
   password: String,
-});
-
-fresherSchema = new mongoose.Schema({
-  event: String,
-  code: { type: String, default: "fre001" },
-});
-
-presidentSchema = new mongoose.Schema({
-  event: String,
-  code: { type: String, default: "pre002" },
 });
 
 votersListSchema = new mongoose.Schema({
@@ -69,13 +57,13 @@ const User = new mongoose.model("User", userSchema);
 const Candidate = new mongoose.model("Candidate", candidateSchema);
 const Vote = new mongoose.model("Vote", votingListSchema);
 const Voter = new mongoose.model("Voter", votersListSchema);
-const Fresher = new mongoose.model("Fresher", fresherSchema);
-const President = new mongoose.model("President", presidentSchema);
-connectDB().then(() => {
-  app.listen(PORT, function (req, res) {
-    console.log("started at 3000");
-  });
+// const Fresher = new mongoose.model("Fresher", fresherSchema);
+// const President = new mongoose.model("President", presidentSchema);
+// connectDB().then(() => {
+app.listen(PORT, function (req, res) {
+  console.log("started at 3000");
 });
+// });
 
 //function for home page
 app.get("/", function (req, res) {
@@ -142,7 +130,7 @@ app.post("/login", function (req, res) {
         )
           res.render("login", { alert: "Incorrect id or password" });
         else res.redirect("/choice");
-      else {
+      } else {
         res.render("login", {
           alert: "Account with these credentials doesnt exist please signup",
         });
@@ -305,7 +293,7 @@ app.post("/confirm", function (req, res) {
       if (foundVoters.length > 0) {
         console.log(foundVoters);
         res.render("confirm", {
-          alert: "You have already voted",
+          alert: "You have already voted or id of candidate does not match",
           selectedcandid: finalvote,
         });
       } else {
@@ -316,7 +304,7 @@ app.post("/confirm", function (req, res) {
           console.log(err);
         });
 
-        Candidate.findOne({ voterid: selected }) //checks if candidate has already voted
+        Candidate.findOne({ voterid: selected }) //checks if candidate has already been voted
           .then((foundCandidate) => {
             if (foundCandidate) {
               //console.log(foundCandidate.voterid);
@@ -362,7 +350,7 @@ app.post("/confirm", function (req, res) {
                 });
               } else {
                 res.render("confirm", {
-                  selectedcand: foundCandidate.voterid,
+                  selectedcandid: foundCandidate.voterid,
                   selectcandname: foundCandidate.name,
                   alert: "id does not match with the selected id",
                 });
@@ -380,11 +368,22 @@ app.post("/confirm", function (req, res) {
 });
 
 //functin to display results fromm highest votes to lowest votes
+const empty = {
+  name: "Nil",
+  voterid: "Nil",
+  votes: 0,
+};
 app.get("/result", function (req, res) {
   Vote.find({})
-    .sort({ votes: -1, usn: -1 })
+    .sort({ votes: -1 })
     .then((founditems) => {
-      res.render("result", { listItems: founditems, event: "Elections" });
+      if (founditems)
+        res.render("result", { listItems: founditems, event: "Elections" });
+      else
+        res.render("result", {
+          listItems: [empty],
+          event: "Results yet to be declared",
+        });
     })
     .catch((err) => {
       console.log(err);

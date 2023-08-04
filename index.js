@@ -135,7 +135,13 @@ app.post("/login", function (req, res) {
   User.find({ voterid: loginid }) //checks in users collection
     .then((foundUser) => {
       console.log(foundUser);
-      if (foundUser.length > 0) res.redirect("/choice");
+      if (foundUser.length > 0) {
+        if (
+          foundUser[0].voterid != loginid ||
+          foundUser[0].password != loginPass
+        )
+          res.render("login", { alert: "Incorrect id or password" });
+        else res.redirect("/choice");
       else {
         res.render("login", {
           alert: "Account with these credentials doesnt exist please signup",

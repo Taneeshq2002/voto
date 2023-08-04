@@ -16,18 +16,18 @@ var listitems = [];
 var selected = ""; //to store usn of candidate whose checkbox is ticked
 var count = 0; //to keep count fo votes of each candidate separately
 
-mongoose.connect("mongodb://127.0.0.1:27017/electionDB", {
-  useNewUrlParser: true,
-});
-// mongoose.set("strictQuery", false);
-// const connectDB = async () => {
-//   try {
-//     const conn = await mongoose.connect(process.env.MONGO_URL);
-//   } catch (err) {
-//     console.log(error);
-//     process.exit(1);
-//   }
-// };
+// mongoose.connect("mongodb://127.0.0.1:27017/electionDB", {
+//   useNewUrlParser: true,
+// });
+mongoose.set("strictQuery", false);
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URL);
+  } catch (err) {
+    console.log(error);
+    process.exit(1);
+  }
+};
 
 //for all users
 userSchema = new mongoose.Schema({
@@ -57,13 +57,12 @@ const User = new mongoose.model("User", userSchema);
 const Candidate = new mongoose.model("Candidate", candidateSchema);
 const Vote = new mongoose.model("Vote", votingListSchema);
 const Voter = new mongoose.model("Voter", votersListSchema);
-// const Fresher = new mongoose.model("Fresher", fresherSchema);
-// const President = new mongoose.model("President", presidentSchema);
-// connectDB().then(() => {
-app.listen(PORT, function (req, res) {
-  console.log("started at 3000");
+
+connectDB().then(() => {
+  app.listen(PORT, function (req, res) {
+    console.log("started at 3000");
+  });
 });
-// });
 
 //function for home page
 app.get("/", function (req, res) {

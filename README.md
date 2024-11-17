@@ -19,8 +19,8 @@ Configure the database connection in the .env file or for local device add local
 Start the database server using "mongod"
 Run the server using nodemon index.js.
 Access the application at http://localhost:3000.
-Use Cases:
 
+**Use Cases:**
 Educational simulation for teaching voting processes.
 Digital replacement for traditional voting systems
  

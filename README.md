@@ -11,9 +11,9 @@ Admin interface for managing elections and candidates.
 **Tech Stack:**
 Backend: Node.js, Express.js, EJS
 Database: MongoDB
-Setup Instructions:
 
-**Clone the repository.**
+**Setup Instructions:**
+Clone the repository.
 Install dependencies using npm install.
 Configure the database connection in the .env file or for local device add local address that is "mongodb://127.0.0.1:27017/yourDBName".
 Start the database server using "mongod"
